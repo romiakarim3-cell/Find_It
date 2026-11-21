@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindIt | Horus University</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">Find<span>It</span></div>
+    <div class="university">HORUS UNIVERSITY</div>
+</header>
+
+<section class="hero">
+    <p class="tag">HORUS UNIVERSITY COMMUNITY</p>
+    <h1>حاجتك ضاعت؟<br>خلينا نساعدك تلاقيها.</h1>
+    <p>منصة المفقودات والمعثورات لطلاب جامعة حورس</p>
+
+    <input type="text" id="search"
+    placeholder="ابحث عن حاجتك هنا...">
+
+    <button onclick="searchItems()">ابحث الآن</button>
+</section>
+
+<section class="container">
+
+    <h2>الأقسام الرئيسية</h2>
+
+    <div class="categories">
+        <div class="category" onclick="filterItems('id')">
+            <span>🪪</span>
+            <h3>University ID</h3>
+            <p>البطاقات الجامعية</p>
+        </div>
+
+        <div class="category" onclick="filterItems('mobile')">
+            <span>📱</span>
+            <h3>Mobiles</h3>
+            <p>الموبايلات</p>
+        </div>
+
+        <div class="category" onclick="filterItems('wallet')">
+            <span>👛</span>
+            <h3>Wallets</h3>
+            <p>المحافظ</p>
+        </div>
+
+        <div class="category" onclick="filterItems('keys')">
+            <span>🔑</span>
+            <h3>Keys</h3>
+            <p>المفاتيح</p>
+        </div>
+
+        <div class="category" onclick="filterItems('bag')">
+            <span>🎒</span>
+            <h3>Bags</h3>
+            <p>الشنط</p>
+        </div>
+
+        <div class="category" onclick="filterItems('books')">
+            <span>📚</span>
+            <h3>Books</h3>
+            <p>الكتب والأدوات</p>
+        </div>
+    </div>
+
+    <h2>أحدث المفقودات والمعثورات</h2>
+
+    <div id="items" class="items">
+
+        <div class="item" data-category="id">
+            <div class="item-icon">🪪</div>
+            <h3>University ID</h3>
+            <p>بطاقة جامعية مفقودة</p>
+            <span class="status lost">مفقود</span>
+        </div>
+
+        <div class="item" data-category="mobile">
+            <div class="item-icon">📱</div>
+            <h3>Mobile Phone</h3>
+            <p>هاتف تم العثور عليه</p>
+            <span class="status found">تم العثور عليه</span>
+        </div>
+
+        <div class="item" data-category="wallet">
+            <div class="item-icon">👛</div>
+            <h3>Wallet</h3>
+            <p>محفظة مفقودة</p>
+            <span class="status lost">مفقود</span>
+        </div>
+
+    </div>
+
+    <section class="upload-section">
+        <h2>أضف بلاغ جديد</h2>
+        <p>ضاعت منك حاجة أو لقيت حاجة؟ شاركنا بصورة.</p>
+
+        <form id="uploadForm">
+
+            <input type="text" id="itemName"
+            placeholder="اسم الحاجة" required>
+
+            <select id="category" required>
+                <option value="">اختر القسم</option>
+                <option value="id">University ID</option>
+                <option value="mobile">Mobile</option>
+                <option value="wallet">Wallet</option>
+                <option value="keys">Keys</option>
+                <option value="bag">Bag</option>
+                <option value="books">Books</option>
+            </select>
+
+            <select id="itemStatus" required>
+                <option value="lost">حاجة ضاعت مني</option>
+                <option value="found">حاجة لقيتها</option>
+            </select>
+
+            <input type="text" id="location"
+            placeholder="المكان اللي ضاعت أو اتلاقت فيه">
+
+            <input type="file" id="itemImage"
+            accept="image/*" required>
+
+            <button type="submit">نشر البلاغ</button>
+
+        </form>
+    </section>
+
+</section>
+
+<footer>
+    <h3>FindIt | Horus University</h3>
+    <p>مع بعض نخلي المفقودات ترجع لأصحابها.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
